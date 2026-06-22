@@ -12,7 +12,7 @@ app.use(express.json());
 const admin = require("firebase-admin");
 const { getAuth } = require("firebase-admin/auth");
 
-const serviceAccount = require("./firebase-admin-sevice.json");
+const serviceAccount = require("./firebase-admin-service.json");
 
 admin.initializeApp({
   credential: admin.cert(serviceAccount)
@@ -177,8 +177,8 @@ async function run() {
 
 
     // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    // await client.db("admin").command({ ping: 1 });
+    // console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
